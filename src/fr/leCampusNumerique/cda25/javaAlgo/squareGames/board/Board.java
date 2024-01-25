@@ -23,5 +23,10 @@ public class Board implements BoardInterface {
         return false;
     }
 
+    @Override
+    public Player getCurrentPlayerInCase(Coordonnees coordonnees) {
+        return null;
+    }
+
 
 }

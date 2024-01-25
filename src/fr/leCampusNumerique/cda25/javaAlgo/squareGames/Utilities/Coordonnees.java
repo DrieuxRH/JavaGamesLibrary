@@ -8,4 +8,14 @@ public class Coordonnees implements CoordonneesInterface{
         if(x < 0) x = 0;
         if(y < 0) y = 0;
     }
+
+    @Override
+    public Coordonnees convertCoordonnerMathUser(Coordonnees coordonnees) {
+        return null;
+    }
+
+    @Override
+    public Coordonnees convertCoordonnerUserUser(Coordonnees coordonnees) {
+        return null;
+    }
 }
