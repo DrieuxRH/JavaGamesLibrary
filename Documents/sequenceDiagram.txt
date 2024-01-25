@@ -1,0 +1,34 @@
+Game Librarie
+
+participant GameManager
+
+participant View
+
+participant Interaction
+participant Game
+participant Board
+participant Player
+participant Cells
+participant Coordinates
+
+GameManager->View:Initializes the view to display text
+GameManager->Interaction:Initializes the Interaction class
+GameManager->Interaction:Ask the user which game he wants to play
+Interaction->GameManager: Give the user's choice
+
+GameManager->Game:Initiate the chosen game
+
+Game->Interaction:Ask the mode of the game
+Interaction->Game: Return the user's choice
+
+Game->Board:Create the board
+Game->Player:Create the players
+
+Board->Cells:Initialize the cells
+Board->Coordinates:Initialize the co-ordinates
+
+Game->View: Show the game board
+Game->Interactio
+Board->:Create the board
+
+
