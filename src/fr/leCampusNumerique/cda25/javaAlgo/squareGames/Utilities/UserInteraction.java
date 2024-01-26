@@ -22,4 +22,12 @@ public class UserInteraction {
         // Returning the read data using readLine
         return scn.nextLine();
     }
+
+    public String getPlayerName(int order) {
+        View.getInstance().showMsgChooseYourName(order);
+        String playerName = readUserInputStringOneLine();
+        //System.out.print("Player, please choose your representation in game:");
+        //String playerPresentation = readUserInputStringOneLine();
+        return playerName;
+    }
 }
