@@ -3,15 +3,18 @@ package fr.leCampusNumerique.cda25.javaAlgo.squareGames;
 import fr.leCampusNumerique.cda25.javaAlgo.squareGames.Utilities.UserInteraction;
 import fr.leCampusNumerique.cda25.javaAlgo.squareGames.Utilities.Validator;
 import fr.leCampusNumerique.cda25.javaAlgo.squareGames.Utilities.View;
+import fr.leCampusNumerique.cda25.javaAlgo.squareGames.games.GameFactory;
+import fr.leCampusNumerique.cda25.javaAlgo.squareGames.games.GameInterface;
 
 public class GameManager {
     public static void main(String[] args) {
 
         //TODO Too long, to refactor
+
         View view = View.getInstance();
         UserInteraction userInteraction = UserInteraction.getInstance();
         Validator validator = new Validator();
-
+        GameFactory gameFactory = new GameFactory();
 
         view.showOneLineMsg("****Welcome to Play****");
 
@@ -29,10 +32,12 @@ public class GameManager {
             modeChoice = userInteraction.getUserInput();
         }
 
-        initializeGame(gameChoice, modeChoide);
+
+        GameInterface game = gameFactory.createGame("ticTacToe");
+        //initializeGame(gameChoice, modeChoide);
 
 
     }
-
+    
 
 }
