@@ -33,7 +33,8 @@ public class GameManager {
         }
 
 
-        GameInterface game = gameFactory.createGame("ticTacToe");
+        GameInterface game = gameFactory.createGame(gameChoice);
+        game.play();
         //initializeGame(gameChoice, modeChoide);
 
         

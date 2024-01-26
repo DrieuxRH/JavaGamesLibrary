@@ -1,10 +1,16 @@
 package fr.leCampusNumerique.cda25.javaAlgo.squareGames.Utilities;
 
+import fr.leCampusNumerique.cda25.javaAlgo.squareGames.board.Board;
+import fr.leCampusNumerique.cda25.javaAlgo.squareGames.cell.symbols.CellFactory;
+
 public class View {
     // This class will be singleton
     private static View instance;
+    private CellFactory cellFactory;
 
-    private View(){};
+    private View(){
+        cellFactory = new CellFactory();
+    };
 
     public static View getInstance(){
         if (instance == null){
@@ -33,5 +39,31 @@ public class View {
         this.showOneLineMsg("  2) Human vs. AI");
         this.showOneLineMsg("  3) AI vs. AI");
 
+    }
+
+    public void displayBoardWithHorizontalLines(Board ticTacToeBoard) {
+        printSeparationLine(ticTacToeBoard.getX(), "ticTacToe");
+        for (int i = 0; i < ticTacToeBoard.getX(); i++) {
+            for (int j = 0; j < ticTacToeBoard.getY(); j++) {
+                System.out.print(ticTacToeBoard.getCellInPositionXY(i + 1, j + 1).getRepresentation());
+            }
+            printEndLine();
+            printSeparationLine(ticTacToeBoard.getX(), "ticTacToe");
+        }
+    }
+
+    private void printEndLine(){
+        System.out.println("|");
+    }
+
+   private void printSeparationLine(int size, String type){
+        for (int i = 0; i< size; i++) {
+            //Make it as long as the cell's representation string
+            int lengthOfCell = cellFactory.createCell(type).getRepresentation().length();
+            for(int j = 0; j < lengthOfCell; j++){
+                System.out.print("_");
+            }
+        }
+    System.out.println();
     }
 }
