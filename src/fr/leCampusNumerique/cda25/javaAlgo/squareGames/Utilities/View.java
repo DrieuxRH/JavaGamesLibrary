@@ -1,7 +1,7 @@
 package fr.leCampusNumerique.cda25.javaAlgo.squareGames.Utilities;
 
 import fr.leCampusNumerique.cda25.javaAlgo.squareGames.board.Board;
-import fr.leCampusNumerique.cda25.javaAlgo.squareGames.cell.symbols.CellFactory;
+import fr.leCampusNumerique.cda25.javaAlgo.squareGames.cell.CellFactory;
 
 public class View {
     // This class will be singleton
@@ -41,15 +41,26 @@ public class View {
 
     }
 
-    public void displayBoardWithHorizontalLines(Board ticTacToeBoard) {
-        printSeparationLine(ticTacToeBoard.getX(), "ticTacToe");
-        for (int i = 0; i < ticTacToeBoard.getX(); i++) {
-            for (int j = 0; j < ticTacToeBoard.getY(); j++) {
-                System.out.print(ticTacToeBoard.getCellInPositionXY(i + 1, j + 1).getRepresentation());
+    public void displayBoardWithHorizontalLines(Board board) {
+       printSeparationLine(board.getX(), board.getType());
+        for (int i = 0; i < board.getX(); i++) {
+            for (int j = 0; j < board.getY(); j++) {
+                System.out.print(board.getCellInPositionXY(i + 1, j + 1).getRepresentation());
             }
             printEndLine();
-            printSeparationLine(ticTacToeBoard.getX(), "ticTacToe");
+            printSeparationLine(board.getX(), board.getType());
         }
+    }
+
+    public void displayBoardWithoutHorizontalLines(Board board) {
+        printSeparationLine(board.getX(), board.getType());
+        for (int i = 0; i < board.getY(); i++) {
+            for (int j = 0; j < board.getX(); j++) {
+                System.out.print(board.getCellInPositionXY(i + 1, j + 1).getRepresentation());
+            }
+            printEndLine();
+        }
+        printSeparationLine(board.getX(), board.getType());
     }
 
     private void printEndLine(){

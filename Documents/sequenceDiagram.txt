@@ -1,34 +1,45 @@
-Game Librarie
+title Game Librarie
 
 participant GameManager
 
 participant View
 
 participant Interaction
+
+
+participant GameFactory
+
 participant Game
 participant Board
 participant Player
 participant Cells
 participant Coordinates
 
+
+
 GameManager->View:Initializes the view to display text
 GameManager->Interaction:Initializes the Interaction class
 GameManager->Interaction:Ask the user which game he wants to play
 Interaction->GameManager: Give the user's choice
 
-GameManager->Game:Initiate the chosen game
+GameManager->Interaction:Ask the mode of the game
+Interaction->GameManager: Return the user's choice
 
-Game->Interaction:Ask the mode of the game
-Interaction->Game: Return the user's choice
+GameManager->GameFactory:Tell GamaFactory which game to initiate
+
+GameFactory->Game: Initiate the chosen game with correct mode
+
+
 
 Game->Board:Create the board
-Game->Player:Create the players
-
 Board->Cells:Initialize the cells
 Board->Coordinates:Initialize the co-ordinates
 
-Game->View: Show the game board
+GameManager->Player:Create the players
+
+
+
+
+Game->View: Ask to show the game board
 Game->Interactio
 Board->:Create the board
-
-

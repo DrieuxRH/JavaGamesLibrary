@@ -1,5 +1,6 @@
 package fr.leCampusNumerique.cda25.javaAlgo.squareGames;
 
+import fr.leCampusNumerique.cda25.javaAlgo.squareGames.Player.Player;
 import fr.leCampusNumerique.cda25.javaAlgo.squareGames.Utilities.UserInteraction;
 import fr.leCampusNumerique.cda25.javaAlgo.squareGames.Utilities.Validator;
 import fr.leCampusNumerique.cda25.javaAlgo.squareGames.Utilities.View;
@@ -34,11 +35,16 @@ public class GameManager {
 
 
         GameInterface game = gameFactory.createGame(gameChoice);
+        //createPlayers(modeChoice);
         game.play();
         //initializeGame(gameChoice, modeChoide);
 
         
     }
+
+    /*private Player[] createPlayers(String moodeChoise){
+        Player[] = {PlayerFactory}
+    }*/
 
 
 }
