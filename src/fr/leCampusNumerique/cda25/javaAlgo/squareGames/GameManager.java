@@ -32,8 +32,9 @@ public class GameManager {
             modeChoice = userInteraction.getUserInput();
         }
 
-
-        GameInterface game = gameFactory.createGame("ticTacToe");
+        //TODO to add the modeChoise, so that when game is created it's created with the correct
+        //        combination of the players
+        GameInterface game = gameFactory.createGame(gameChoice);
         //initializeGame(gameChoice, modeChoide);
 
         
