@@ -5,10 +5,12 @@ public abstract class Player {
     private Boolean turn = false;
     private String name;
 
-    Player(String name){
+    Player(String name,String representation){
         this.turn = false;
         this.name = name;
+        this.representation = representation;
     }
+
 
     public String getName(){
         return this.name;
